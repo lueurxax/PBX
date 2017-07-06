@@ -1,0 +1,24 @@
+{
+  "extends": ["eslint:recommended", "google"],
+  "rules": {
+    "no-console": 0,
+    "async-await/space-after-async": 2,
+    "async-await/space-after-await": 2,
+    "require-jsdoc": 0,
+    "arrow-parens": 0,
+    "max-len": ["error", 120],
+    "comma-dangle": 0,
+    "no-case-declarations": 0,
+    "object-curly-spacing": [2, "always"]
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8
+  },
+  "plugins": ["async-await"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  }
+}
