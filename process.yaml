@@ -1,0 +1,6 @@
+apps:
+  - name: pbx_client
+    script: node_modules/webpack-dev-server/bin/webpack-dev-server.js
+    exec_mode: cluster
+    instances: 1
+    watch: true

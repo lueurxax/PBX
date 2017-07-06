@@ -1,0 +1,39 @@
+{
+  "extends": ["eslint:recommended", "google", "plugin:react/recommended"],
+  "rules": {
+    "one-var": ["error", "never"],
+    "no-console": 0,
+    "async-await/space-after-async": 2,
+    "async-await/space-after-await": 2,
+    "require-jsdoc": 0,
+    "arrow-parens": 0,
+    "max-len": ["error", 100],
+    "comma-dangle": 0,
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error",
+    "no-case-declarations": 0,
+    "react/prop-types": 0,
+    "object-curly-spacing": [2, "always"]
+  },
+  "parserOptions": {
+    "sourceType": "module",
+    "ecmaVersion": 8,
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "plugins": ["async-await", "react"],
+  "env": {
+    "node": true,
+    "es6": true,
+    "mocha": true
+  },
+  "settings": {
+    "react": {
+      "createClass": "createReactClass", // Regex for Component Factory to use, default to "createReactClass"
+      "pragma": "React",  // Pragma to use, default to "React"
+      "version": "15.4" // React version, default to the latest React stable release
+    }
+  }
+}
