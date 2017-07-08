@@ -7,7 +7,6 @@ const { selectMember } = require('./select');
 
 const updateMembers = async (members, name) => {
   try {
-    console.error(members, name);
     const queue = { name };
     const oldMembers = await selectMember(queue);
     const oldMembersName = oldMembers.members.map(member => {
@@ -39,7 +38,7 @@ const updateMembers = async (members, name) => {
   }
 };
 
-module.exports = { updateMembers };
+module.exports = updateMembers;
 
 function intersection(a, b) {
   let c = [];

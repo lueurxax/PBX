@@ -11,7 +11,7 @@ const convert = require('koa-convert');
 exports.init = app => app.use(convert(function* (next) {
   // the body isn't multipart, so busboy can't parse it
   if (!this.request.is('multipart/*')) {
-    return yield* next;
+    return yield * next;
   }
 
   const parser = busboy(this, {

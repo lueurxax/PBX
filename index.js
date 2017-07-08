@@ -30,11 +30,13 @@ const router = new Router();
 router.get('/', require('./routes/frontpage').get);
 router.get('/users', require('./routes/users').get);
 router.get('/exts', require('./routes/exts').get);
+router.get('/queues', require('./routes/queues').get);
 router.patch('/exts', require('./routes/exts').patch);
 router.patch('/queues/members', require('./routes/queuemembers').patch);
+router.patch('/queues', require('./routes/queues').patch);
+router.delete('/queues', require('./routes/queues').delete);
 router.delete('/exts', require('./routes/exts').delete);
 router.delete('/users', require('./routes/users').delete);
-router.get('/queues', require('./routes/queues').get);
 router.post('/login', require('./routes/login').post);
 router.post('/signup', require('./routes/signup').post);
 
