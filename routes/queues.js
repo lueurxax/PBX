@@ -25,10 +25,12 @@ exports.patch = async function(ctx, next) {
     try {
       let queue = ctx.request.body.values;
       await updateMembers(queue.agents, queue.name);
+      const agents = queue.agents;
       delete queue.agents;
-      console.log(queue);
-      await update(queue);
-      ctx.body = 'success';
+      let resultQueue = await update(queue);
+      resultQueue = resultQueue[0].dataValues;
+      resultQueue = await selectMember(resultQueue);
+      ctx.body = resultQueue;
     } catch (err) {
       console.error(err);
       ctx.throw(500, err);
@@ -40,7 +42,6 @@ exports.patch = async function(ctx, next) {
 };
 
 exports.delete = async function(ctx, next) {
-  console.log(ctx.request.body);
   if (ctx.req.user.isAdmin) {
     try {
       await del(ctx.request.body.name);

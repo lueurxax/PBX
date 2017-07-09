@@ -30,7 +30,6 @@ const updateMembers = async (members, name) => {
         }
       });
     }));
-    console.log(forInsert, forDelete);
     return queue;
   } catch (err) {
     console.error(err);
